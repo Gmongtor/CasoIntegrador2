@@ -1,4 +1,4 @@
-package Animales;
+package Zoologico.Animales;
 public abstract class Animales {
     protected String nombre;
     protected int edad;

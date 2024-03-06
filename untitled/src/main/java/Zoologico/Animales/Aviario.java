@@ -1,4 +1,4 @@
-package Animales;
+package Zoologico.Animales;
 
 public class Aviario extends Animales {
     private String tipoDeVuelo;

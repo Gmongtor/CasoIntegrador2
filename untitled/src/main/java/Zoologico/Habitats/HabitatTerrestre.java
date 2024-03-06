@@ -1,4 +1,4 @@
-package Habitats;
+package Zoologico.Habitats;
 
 public class HabitatTerrestre extends Habitats {
     private double calidadDelSuelo;

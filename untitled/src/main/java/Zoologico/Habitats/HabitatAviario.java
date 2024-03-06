@@ -1,4 +1,4 @@
-package Habitats;
+package Zoologico.Habitats;
 
 public class HabitatAviario extends Habitats {
     private double flujoDeAire;

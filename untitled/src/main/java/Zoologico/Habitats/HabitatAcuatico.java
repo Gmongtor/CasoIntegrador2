@@ -1,4 +1,4 @@
-package Habitats;
+package Zoologico.Habitats;
 
 public class HabitatAcuatico extends Habitats {
     private double nivelDeSalinidad;

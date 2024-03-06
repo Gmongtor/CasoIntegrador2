@@ -1,4 +1,4 @@
-package Habitats;
+package Zoologico.Habitats;
 
     public abstract class Habitats {
         protected String nombre;

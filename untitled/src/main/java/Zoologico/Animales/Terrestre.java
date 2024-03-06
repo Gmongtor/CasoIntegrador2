@@ -1,4 +1,4 @@
-package Animales;
+package Zoologico.Animales;
 
 public class Terrestre extends Animales {
     private String tipoDeLocomocion;
