@@ -5,7 +5,7 @@ public abstract class Animales {
     protected String estadoSalud;
     protected String comportamiento;
 
-    public Animales(String nombre, int edad) {
+    public Animales(String nombre, int edad, String estadoSalud) {
         this.nombre = nombre;
         this.edad = edad;
         this.estadoSalud = "Buena";
