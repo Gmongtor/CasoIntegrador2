@@ -11,9 +11,40 @@ public class HabitatTerrestre extends Habitats {
     @Override
     public void monitorearCondiciones() {
 
-        actualizarCondiciones(24.0, 50.0, true);
-        System.out.println("Monitoreando condiciones terrestres para " + nombre +
-                ". Calidad del suelo: " + calidadDelSuelo);
+        double temperaturaObtenida = obtenerTemperatura();
+        double humedadObtenida = obtenerHumedad();
+        boolean estadoDeLimpieza = verificarLimpieza();
+
+
+        double calidadSueloObtenida = obtenerCalidadDelSuelo();
+
+
+        actualizarCondiciones(temperaturaObtenida, humedadObtenida, estadoDeLimpieza);
+        this.calidadDelSuelo = calidadSueloObtenida;
+
+        System.out.println("Condiciones del hábitat terrestre '" + nombre + "' monitoreadas: temperatura = " + temperaturaObtenida +
+                ", humedad = " + humedadObtenida + ", limpio = " + estadoDeLimpieza +
+                ", calidad del suelo = " + calidadSueloObtenida);
+    }
+
+    private double obtenerTemperatura() {
+
+        return 24.0;
+    }
+
+    private double obtenerHumedad() {
+
+        return 50.0;
+    }
+
+    private boolean verificarLimpieza() {
+
+        return true;
+    }
+
+    private double obtenerCalidadDelSuelo() {
+
+        return 7.5;
     }
 
     public double getCalidadDelSuelo() {
