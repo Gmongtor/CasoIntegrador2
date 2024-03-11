@@ -15,8 +15,6 @@ import Zoologico.GestionRecursos.AdministracionRecursos;
 import Zoologico.GestionRecursos.Pedido;
 import Zoologico.GestionRecursos.Recurso;
 
-
-
 public class Zoologico {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -25,33 +23,34 @@ public class Zoologico {
         String rol = scanner.nextLine().trim().toLowerCase();
 
         if ("visitante".equals(rol)) {
-            // El resto del código que solicita el hábitat a visitar permanece igual
-            String habitatSeleccionado  = scanner.nextLine().trim().toLowerCase();
+            System.out.println("¿Qué hábitat te gustaría visitar? (Terrestre, Acuático, Aviario)");
+            String habitatSeleccionado = scanner.nextLine().trim().toLowerCase();
+
             switch (habitatSeleccionado) {
                 case "terrestre":
-                    new HabitatTerrestre().mostrarInformacion();
+                    HabitatTerrestre terrestre = new HabitatTerrestre();
                     break;
                 case "acuático":
-                    new HabitatAcuatico().mostrarInformacion();
+                    HabitatAcuatico acuatico = new HabitatAcuatico();
                     break;
                 case "aviario":
-                    new HabitatAviario().mostrarInformacion();
+                    HabitatAviario aviario = new HabitatAviario();
                     break;
                 default:
                     System.out.println("Hábitat no reconocido.");
                     break;
             }
         } else if ("administrador".equals(rol)) {
-            // El resto del código que solicita la gestión deseada permanece igual
-            String gestionSeleccionada  = scanner.nextLine().trim().toLowerCase();
+            System.out.println("¿Qué gestión te gustaría realizar? (Recursos, Mantenimiento, Pedidos)");
+            String gestionSeleccionada = scanner.nextLine().trim().toLowerCase();
+
             switch (gestionSeleccionada) {
                 case "recursos":
-                    new AdministracionRecursos().gestionarRecursos();
+                    AdministracionRecursos adminRecursos = new AdministracionRecursos();
                     break;
                 case "mantenimiento":
-                    new GestorMantenimiento().gestionarMantenimiento();
+                    GestorMantenimiento gestorMantenimiento = new GestorMantenimiento();
                     break;
-                // Las implementaciones para "pedidos" y otras gestiones específicas deben seguir un enfoque similar
                 default:
                     System.out.println("Opción de gestión no reconocida.");
                     break;

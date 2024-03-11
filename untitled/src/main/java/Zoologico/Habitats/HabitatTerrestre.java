@@ -1,9 +1,9 @@
 package Zoologico.Habitats;
-public class HabitatTerrestre extends Habitats{
+public class HabitatTerrestre extends Habitats {
 
     boolean puede_caminar;
 
-    public HabitatTerrestre(float temperatura,float humedad,boolean limpieza, boolean puede_caminar) {
+    public HabitatTerrestre(float temperatura, float humedad, boolean limpieza, boolean puede_caminar) {
         super(temperatura, humedad, limpieza);
         this.puede_caminar = puede_caminar;
     }
@@ -39,5 +39,4 @@ public class HabitatTerrestre extends Habitats{
     public void setPuede_caminar(boolean puede_caminar) {
         this.puede_caminar = puede_caminar;
     }
-
 }

@@ -1,76 +1,36 @@
 package Zoologico.Habitats;
 
 public class HabitatAviario extends Habitats {
-    private double flujoDeAire;
-    private double luzSolar;
 
-    public HabitatAviario(String nombre, double flujoDeAire, double luzSolar) {
-        super(nombre);
-        this.flujoDeAire = flujoDeAire;
-        this.luzSolar = luzSolar;
+    boolean puede_volar;
+
+    public HabitatAviario(float temperatura,float humedad,boolean limpieza, boolean puede_volar) {
+        super(temperatura, humedad, limpieza);
+        this.puede_volar = puede_volar;
     }
 
-    @Override
-    public void monitorearCondiciones() {
-
-
-        double temperaturaObtenida = obtenerTemperatura();
-        double humedadObtenida = obtenerHumedad();
-        boolean estadoDeLimpieza = verificarLimpieza();
-        double flujoDeAireObtenido = obtenerFlujoDeAire();
-        double luzSolarObtenida = obtenerLuzSolar();
-
-
-        actualizarCondiciones(temperaturaObtenida, humedadObtenida, estadoDeLimpieza);
-        this.flujoDeAire = flujoDeAireObtenido;
-        this.luzSolar = luzSolarObtenida;
-
-        System.out.println("Condiciones del hábitat aviario '" + nombre + "' monitoreadas: temperatura = " + temperaturaObtenida +
-                ", humedad = " + humedadObtenida + ", limpio = " + estadoDeLimpieza +
-                ", flujo de aire = " + flujoDeAireObtenido + ", luz solar = " + luzSolarObtenida);
+    public String toString() {
+        return "aviario []";
+    }
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
-
-    private double obtenerTemperatura() {
-
-        return 22.0;
+    public int hashCode() {
+        return super.hashCode();
     }
 
-    private double obtenerHumedad() {
-
-        return 60.0;
+    public boolean isPuede_volar() {
+        return puede_volar;
     }
 
-    private boolean verificarLimpieza() {
-
-        return true;
-    }
-
-    private double obtenerFlujoDeAire() {
-
-        return 1.5;
-    }
-
-    private double obtenerLuzSolar() {
-
-        return 500;
+    public void setPuede_volar(boolean puede_volar) {
+        this.puede_volar = puede_volar;
     }
 
 
-    public double getFlujoDeAire() {
-        return flujoDeAire;
-    }
-
-    public void setFlujoDeAire(double flujoDeAire) {
-        this.flujoDeAire = flujoDeAire;
-    }
-
-    public double getLuzSolar() {
-        return luzSolar;
-    }
-
-    public void setLuzSolar(double luzSolar) {
-        this.luzSolar = luzSolar;
-    }
 }
 
