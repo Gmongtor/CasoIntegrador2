@@ -1,42 +1,50 @@
 package Zoologico.Habitats;
+
 public class HabitatTerrestre extends Habitats {
 
-    boolean puede_caminar;
+    boolean puedeCaminar;
 
-    public HabitatTerrestre(float temperatura, float humedad, boolean limpieza, boolean puede_caminar) {
+    public HabitatTerrestre(float temperatura, float humedad, boolean limpieza, boolean puedeCaminar) {
         super(temperatura, humedad, limpieza);
-        this.puede_caminar = puede_caminar;
+        this.puedeCaminar = puedeCaminar;
     }
 
     @Override
     public String toString() {
-        return "terrestres []";
+        return "HabitatTerrestre{" +
+                "temperatura=" + temperatura +
+                ", humedad=" + humedad +
+                ", limpieza=" + limpieza +
+                ", puedeCaminar=" + puedeCaminar +
+                '}';
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        // TODO Auto-generated method stub
-        return super.clone();
+    protected HabitatTerrestre clone() throws CloneNotSupportedException {
+        return (HabitatTerrestre) super.clone();
     }
 
     @Override
     public boolean equals(Object obj) {
-        // TODO Auto-generated method stub
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (!(obj instanceof HabitatTerrestre)) return false;
+        HabitatTerrestre that = (HabitatTerrestre) obj;
+        return super.equals(obj) && puedeCaminar == that.puedeCaminar;
     }
-
 
     @Override
     public int hashCode() {
-        // TODO Auto-generated method stub
-        return super.hashCode();
+        int result = super.hashCode();
+        result = 31 * result + (puedeCaminar ? 1 : 0);
+        return result;
     }
 
-    public boolean isPuede_caminar() {
-        return puede_caminar;
+    public boolean isPuedeCaminar() {
+        return puedeCaminar;
     }
 
-    public void setPuede_caminar(boolean puede_caminar) {
-        this.puede_caminar = puede_caminar;
+    public void setPuedeCaminar(boolean puedeCaminar) {
+        this.puedeCaminar = puedeCaminar;
     }
 }
+

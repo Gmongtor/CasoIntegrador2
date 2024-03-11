@@ -1,52 +1,53 @@
 package Zoologico.Habitats;
 
+public class HabitatAcuatico extends Habitats {
 
-public class HabitatAcuatico extends Habitats{
+    boolean puedeNadar;
 
-    boolean puede_nadar;
-
-    public HabitatAcuatico(float temperatura,float humedad,boolean limpieza,boolean puede_nadar) {
+    public HabitatAcuatico(float temperatura, float humedad, boolean limpieza, boolean puedeNadar) {
         super(temperatura, humedad, limpieza);
-        this.puede_nadar = puede_nadar;
+        this.puedeNadar = puedeNadar;
     }
-
 
     @Override
     public String toString() {
-        return "acuaticos []";
+        return "HabitatAcuatico{" +
+                "temperatura=" + temperatura +
+                ", humedad=" + humedad +
+                ", limpieza=" + limpieza +
+                ", puedeNadar=" + puedeNadar +
+                '}';
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        // TODO Auto-generated method stub
-        return super.clone();
+    protected HabitatAcuatico clone() throws CloneNotSupportedException {
+        return (HabitatAcuatico) super.clone();
     }
 
     @Override
     public boolean equals(Object obj) {
-        // TODO Auto-generated method stub
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (!(obj instanceof HabitatAcuatico)) return false;
+        HabitatAcuatico that = (HabitatAcuatico) obj;
+        return super.equals(obj) && puedeNadar == that.puedeNadar;
     }
-
-
 
     @Override
     public int hashCode() {
-        // TODO Auto-generated method stub
-        return super.hashCode();
+        int result = super.hashCode();
+        result = 31 * result + (puedeNadar ? 1 : 0);
+        return result;
     }
 
-
-    public boolean isPuede_nadar() {
-        return puede_nadar;
+    public boolean isPuedeNadar() {
+        return puedeNadar;
     }
 
-
-    public void setPuede_nadar(boolean puede_nadar) {
-        this.puede_nadar = puede_nadar;
+    public void setPuedeNadar(boolean puedeNadar) {
+        this.puedeNadar = puedeNadar;
     }
-
 }
+
 
 
 

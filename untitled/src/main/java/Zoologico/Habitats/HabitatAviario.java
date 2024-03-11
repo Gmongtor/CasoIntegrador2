@@ -2,35 +2,43 @@ package Zoologico.Habitats;
 
 public class HabitatAviario extends Habitats {
 
-    boolean puede_volar;
+    boolean puedeVolar;
 
-    public HabitatAviario(float temperatura,float humedad,boolean limpieza, boolean puede_volar) {
+    public HabitatAviario(float temperatura, float humedad, boolean limpieza, boolean puedeVolar) {
         super(temperatura, humedad, limpieza);
-        this.puede_volar = puede_volar;
+        this.puedeVolar = puedeVolar;
     }
 
+    @Override
     public String toString() {
-        return "aviario []";
+        return "HabitatAviario{" +
+                "temperatura=" + temperatura +
+                ", humedad=" + humedad +
+                ", limpieza=" + limpieza +
+                ", puedeVolar=" + puedeVolar +
+                '}';
     }
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+
+    @Override
+    protected HabitatAviario clone() throws CloneNotSupportedException {
+        return (HabitatAviario) super.clone();
     }
+
+    @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (!(obj instanceof HabitatAviario)) return false;
+        HabitatAviario that = (HabitatAviario) obj;
+        return super.equals(obj) && puedeVolar == that.puedeVolar;
     }
 
+    @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = super.hashCode();
+        result = 31 * result + (puedeVolar ? 1 : 0);
+        return result;
     }
-
-    public boolean isPuede_volar() {
-        return puede_volar;
-    }
-
-    public void setPuede_volar(boolean puede_volar) {
-        this.puede_volar = puede_volar;
-    }
-
-
 }
+
+
 
