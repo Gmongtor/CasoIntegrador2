@@ -1,24 +1,62 @@
 package Zoologico.Habitats;
 
-    public abstract class Habitats {
-        protected String nombre;
-        protected double temperatura;
-        protected double humedad;
-        protected boolean estaLimpio;
+public class Habitats {
+    float temperatura;
+    float humedad;
+    boolean limpieza;
 
-        public Habitats(String nombre) {
-            this.nombre = nombre;
-            this.temperatura = 0.0;
-            this.humedad = 0.0;
-            this.estaLimpio = true;
-        }
+    public Habitats(float temperatura,float humedad,boolean limpieza) {
+        this.temperatura = temperatura;
+        this.humedad = humedad;
+        this.limpieza = limpieza;
+    }
 
-        public abstract void monitorearCondiciones();
+    @Override
+    public String toString() {
+        return "habitats []";
+    }
 
-        protected void actualizarCondiciones(double temperatura, double humedad, boolean estaLimpio) {
-            this.temperatura = temperatura;
-            this.humedad = humedad;
-            this.estaLimpio = estaLimpio;
-            System.out.println("Actualizando condiciones para " + nombre);
-        }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        return super.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        return super.equals(obj);
+    }
+
+
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        return super.hashCode();
+    }
+
+    public float getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(float temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    public float getHumedad() {
+        return humedad;
+    }
+
+    public void setHumedad(float humedad) {
+        this.humedad = humedad;
+    }
+
+    public boolean isLimpieza() {
+        return limpieza;
+    }
+
+    public void setLimpieza(boolean limpieza) {
+        this.limpieza = limpieza;
+    }
+
 }

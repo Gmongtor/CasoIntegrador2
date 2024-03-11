@@ -29,7 +29,7 @@ public class Zoologico {
             String habitatSeleccionado  = scanner.nextLine().trim().toLowerCase();
             switch (habitatSeleccionado) {
                 case "terrestre":
-                    new HabitatTerrestre().mostrarInformacion();
+                    new HabitatTerrestre().monitorearCondiciones();
                     break;
                 case "acuático":
                     new HabitatAcuatico().mostrarInformacion();
