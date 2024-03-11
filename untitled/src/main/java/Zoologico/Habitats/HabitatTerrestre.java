@@ -9,6 +9,7 @@ public class HabitatTerrestre extends Habitats {
         this.puedeCaminar = puedeCaminar;
     }
 
+
     @Override
     public String toString() {
         return "HabitatTerrestre{" +

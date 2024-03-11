@@ -15,4 +15,36 @@ import Zoologico.GestionRecursos.AdministracionRecursos;
 import Zoologico.GestionRecursos.Pedido;
 import Zoologico.GestionRecursos.Recurso;
 
+import java.util.Scanner;
+import Zoologico.Habitats.HabitatTerrestre;
+import Zoologico.Habitats.HabitatAviario;
+import Zoologico.Habitats.HabitatAcuatico;
+
+public class Zoologico {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bienvenido al Zoológico. ¿Qué hábitat te gustaría visitar?");
+        System.out.println("1. Terrestre");
+        System.out.println("2. Acuático");
+        System.out.println("3. Aviario");
+        System.out.print("Elige una opción (1-3): ");
+
+        int eleccion = scanner.nextInt();
+
+        switch (eleccion) {
+            case 1:
+                HabitatTerrestre terrestre = new HabitatTerrestre(20, 50, true, true);
+                break;
+            case 2:
+                HabitatAcuatico acuatico = new HabitatAcuatico(25, 70, true, true);
+                break;
+            case 3:
+                HabitatAviario aviario = new HabitatAviario(25, 60, true, true);
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
+    }
+}
 

@@ -38,6 +38,7 @@ public class HabitatAviario extends Habitats {
         result = 31 * result + (puedeVolar ? 1 : 0);
         return result;
     }
+
 }
 
 
