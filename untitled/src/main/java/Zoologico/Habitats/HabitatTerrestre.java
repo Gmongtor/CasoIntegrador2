@@ -1,57 +1,43 @@
 package Zoologico.Habitats;
+public class HabitatTerrestre extends Habitats{
 
-public class HabitatTerrestre extends Habitats {
-    private double calidadDelSuelo;
+    boolean puede_caminar;
 
-    public HabitatTerrestre(String nombre, double calidadDelSuelo) {
-        super(nombre);
-        this.calidadDelSuelo = calidadDelSuelo;
+    public HabitatTerrestre(float temperatura,float humedad,boolean limpieza, boolean puede_caminar) {
+        super(temperatura, humedad, limpieza);
+        this.puede_caminar = puede_caminar;
     }
 
     @Override
-    public void monitorearCondiciones() {
-
-        double temperaturaObtenida = obtenerTemperatura();
-        double humedadObtenida = obtenerHumedad();
-        boolean estadoDeLimpieza = verificarLimpieza();
-
-
-        double calidadSueloObtenida = obtenerCalidadDelSuelo();
-
-
-        actualizarCondiciones(temperaturaObtenida, humedadObtenida, estadoDeLimpieza);
-        this.calidadDelSuelo = calidadSueloObtenida;
-
-        System.out.println("Condiciones del hábitat terrestre '" + nombre + "' monitoreadas: temperatura = " + temperaturaObtenida +
-                ", humedad = " + humedadObtenida + ", limpio = " + estadoDeLimpieza +
-                ", calidad del suelo = " + calidadSueloObtenida);
+    public String toString() {
+        return "terrestres []";
     }
 
-    private double obtenerTemperatura() {
-
-        return 24.0;
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        return super.clone();
     }
 
-    private double obtenerHumedad() {
-
-        return 50.0;
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        return super.equals(obj);
     }
 
-    private boolean verificarLimpieza() {
 
-        return true;
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        return super.hashCode();
     }
 
-    private double obtenerCalidadDelSuelo() {
-
-        return 7.5;
+    public boolean isPuede_caminar() {
+        return puede_caminar;
     }
 
-    public double getCalidadDelSuelo() {
-        return calidadDelSuelo;
+    public void setPuede_caminar(boolean puede_caminar) {
+        this.puede_caminar = puede_caminar;
     }
 
-    public void setCalidadDelSuelo(double calidadDelSuelo) {
-        this.calidadDelSuelo = calidadDelSuelo;
-    }
 }
