@@ -33,13 +33,13 @@ public class Zoologico {
 
         switch (eleccion) {
             case 1:
-                HabitatTerrestre terrestre = new HabitatTerrestre(20, 50, true, true);
+                new HabitatTerrestre(20, 50, true, true);
                 break;
             case 2:
-                HabitatAcuatico acuatico = new HabitatAcuatico(25, 70, true, true);
+                new HabitatAcuatico(25, 70, true, true);
                 break;
             case 3:
-                HabitatAviario aviario = new HabitatAviario(25, 60, true, true);
+                new HabitatAviario(25, 60, true, true);
                 break;
             default:
                 System.out.println("Opción no válida.");
