@@ -2,6 +2,7 @@ package Zoologico.Habitats;
 
 public class HabitatTerrestre extends Habitats {
 
+
     boolean puedeCaminar;
 
     public HabitatTerrestre(float temperatura, float humedad, boolean limpieza, boolean puedeCaminar) {
@@ -13,9 +14,9 @@ public class HabitatTerrestre extends Habitats {
     @Override
     public String toString() {
         return "HabitatTerrestre{" +
-                "temperatura=" + temperatura +
-                ", humedad=" + humedad +
-                ", limpieza=" + limpieza +
+                "temperatura=" + getTemperatura() +
+                ", humedad=" + getHumedad() +
+                ", limpieza=" + isLimpieza() +
                 ", puedeCaminar=" + puedeCaminar +
                 '}';
     }

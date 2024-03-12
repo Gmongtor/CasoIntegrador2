@@ -1,24 +1,10 @@
 package Zoologico;
 
 import java.util.Scanner;
-import Zoologico.SistemaDeMantenimiento.GestorMantenimiento;
-import Zoologico.SistemaDeMantenimiento.TareaMantenimiento;
-import Zoologico.SistemaDeMantenimiento.Camara;
-import Zoologico.SistemaDeMantenimiento.SistemaSeguridad;
-import Zoologico.SistemaDeMantenimiento.DispositivoSeguridad;
-
 import Zoologico.Habitats.HabitatAcuatico;
 import Zoologico.Habitats.HabitatAviario;
 import Zoologico.Habitats.HabitatTerrestre;
-
-import Zoologico.GestionRecursos.AdministracionRecursos;
-import Zoologico.GestionRecursos.Pedido;
-import Zoologico.GestionRecursos.Recurso;
-
-import java.util.Scanner;
-import Zoologico.Habitats.HabitatTerrestre;
-import Zoologico.Habitats.HabitatAviario;
-import Zoologico.Habitats.HabitatAcuatico;
+import Zoologico.Habitats.Habitats;
 
 public class Zoologico {
     public static void main(String[] args) {
@@ -30,21 +16,33 @@ public class Zoologico {
         System.out.print("Elige una opción (1-3): ");
 
         int eleccion = scanner.nextInt();
+        scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
+
+        // Considerando la posibilidad de expandir la funcionalidad, utilizaríamos un enfoque polimórfico:
+        Habitats habitatSeleccionado = null;
 
         switch (eleccion) {
             case 1:
-                new HabitatTerrestre(20, 50, true, true);
+                habitatSeleccionado = new HabitatTerrestre(20, 30, true, true);
                 break;
             case 2:
-                new HabitatAcuatico(25, 70, true, true);
+                habitatSeleccionado = new HabitatAcuatico(25, 70, true, true);
                 break;
             case 3:
-                new HabitatAviario(25, 60, true, true);
+                habitatSeleccionado = new HabitatAviario(22, 60, true, true);
                 break;
             default:
-                System.out.println("Opción no válida.");
-                break;
+                System.out.println("Opción no válida. Por favor, selecciona un número entre 1 y 3.");
+                return; // Salir si la selección no es válida
+        }
+
+        // Asumiendo que cada clase de hábitat tiene implementado un método mostrarInformacion():
+        if (habitatSeleccionado != null) {
+            habitatSeleccionado.mostrarInformacion();
+        } else {
+            System.out.println("Ha ocurrido un error al seleccionar el hábitat.");
         }
     }
 }
+
 
