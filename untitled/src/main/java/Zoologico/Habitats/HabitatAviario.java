@@ -8,6 +8,12 @@ public class HabitatAviario extends Habitats {
         super(temperatura, humedad, limpieza);
         this.puede_volar = puede_volar;
     }
+    public void MostrarInformacion() {
+        System.out.println("Temperatura: " + getTemperatura() + "°C");
+        System.out.println("Humedad: " + getHumedad() + "%");
+        System.out.println("Limpieza: " + (isLimpieza() ? "Sí" : "No"));
+        System.out.println("Puede volar: " + (puede_volar ? "Sí" : "No"));
+    }
 
     public String toString() {
         return "aviario []";
@@ -29,13 +35,6 @@ public class HabitatAviario extends Habitats {
 
     public void setPuede_volar(boolean puede_volar) {
         this.puede_volar = puede_volar;
-    }
-
-    public void MostrarInformacion() {
-        System.out.println("Temperatura: " + getTemperatura() + "°C");
-        System.out.println("Humedad: " + getHumedad() + "%");
-        System.out.println("Limpieza: " + (isLimpieza() ? "Sí" : "No"));
-        System.out.println("Puede volar: " + (puede_volar ? "Sí" : "No"));
     }
 }
 
