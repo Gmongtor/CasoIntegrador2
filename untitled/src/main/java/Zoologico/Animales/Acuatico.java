@@ -12,35 +12,24 @@ public class Acuatico extends Animales {
 
     @Override
     public void sonidoEspecifico() {
+        // Ejemplo genérico, puedes especificar diferentes sonidos para diferentes tipos de animales acuáticos si lo prefieres
         System.out.println(nombre + " emite sonidos bajo el agua.");
     }
 
     public void nadar() {
-        System.out.println(nombre + " está nadando, mostrando su habilidad: " + habilidadEspecial + ".");
+        // Utilizando habilidadEspecial para describir cómo nada el animal
+        System.out.println(nombre + " está nadando, demostrando su habilidad especial de " + habilidadEspecial + ".");
     }
 
-    // Implementación de métodos para registrar la alimentación, salud y comportamiento específicos de acuáticos.
-    @Override
-    public void alimentar(String comida) {
-        super.alimentar(comida);
-        // Añadir condiciones o comportamientos específicos de alimentación de acuáticos aquí.
-        System.out.println(nombre + " atrapa y come su comida en el agua: " + comida + ".");
-    }
-
-    // Métodos getters y setters para tipoHabitat y habilidadEspecial aquí
-    public String getTipoHabitat() {
-        return tipoHabitat;
-    }
-
-    public void setTipoHabitat(String tipoHabitat) {
-        this.tipoHabitat = tipoHabitat;
-    }
-
+    // Getters
     public String getHabilidadEspecial() {
         return habilidadEspecial;
     }
 
-    public void setHabilidadEspecial(String habilidadEspecial) {
-        this.habilidadEspecial = habilidadEspecial;
+    public String getTipoHabitat() {
+        return tipoHabitat;
     }
 }
+
+
+
