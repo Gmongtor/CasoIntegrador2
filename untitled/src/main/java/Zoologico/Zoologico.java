@@ -32,9 +32,9 @@ public class Zoologico {
     }
     private static void atenderVisitanteAnimales(Scanner scanner) {
         System.out.println("Seleccione un hábitat para ver los animales que contiene:");
-        System.out.println("1. Terrestre");
-        System.out.println("2. Acuático");
-        System.out.println("3. Aviario");
+        System.out.println("1. Terrestres");
+        System.out.println("2. Acuáticos");
+        System.out.println("3. Aviarios");
         System.out.print("Elige una opción (1-3): ");
         int eleccion = scanner.nextInt();
         scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
@@ -66,19 +66,19 @@ public class Zoologico {
         scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
 
         // Ejemplos de creación de animales terrestres, reemplazar por la implementación real de tus clases
-        Terrestre leon = new Terrestre("Leon", 5, "Saludable", "Sabana", "Correr rápido");
+        Terrestre leon = new Terrestre("Leon", 5, "Saludable", "Sabana", "Rey de la selva");
         Terrestre elefante = new Terrestre("Elefante", 10, "Saludable", "Selva", "Empujar objetos pesados");
         Terrestre cabraMontes = new Terrestre("Cabra Montes", 3, "Saludable", "Montañas", "Escalar");
 
         switch (eleccion) {
             case 1:
-                System.out.println("Nombre: " + leon.getNombre() + ", Habilidad Especial: " + leon.getHabilidadEspecial());
+                System.out.println("Nombre: " + leon.getNombre() + ", Habilidad Especial: " + leon.getHabilidadEspecial() + ". Vive en: " + leon.getTipoHabitat());
                 break;
             case 2:
-                System.out.println("Nombre: " + elefante.getNombre() + ", Habilidad Especial: " + elefante.getHabilidadEspecial());
+                System.out.println("Nombre: " + elefante.getNombre() + ", Habilidad Especial: " + elefante.getHabilidadEspecial() + ". Vive en: " + elefante.getTipoHabitat());
                 break;
             case 3:
-                System.out.println("Nombre: " + cabraMontes.getNombre() + ", Habilidad Especial: " + cabraMontes.getHabilidadEspecial());
+                System.out.println("Nombre: " + cabraMontes.getNombre() + ", Habilidad Especial: " + cabraMontes.getHabilidadEspecial() + ". Vive en: " + cabraMontes.getTipoHabitat());
                 break;
             default:
                 System.out.println("Opción no válida. Por favor, selecciona un número entre 1 y 3.");
@@ -104,7 +104,7 @@ public class Zoologico {
         String eleccion = scanner.nextLine().trim().toLowerCase();
         switch (eleccion) {
             case "animales":
-                System.out.println("Mostrando información sobre los animales...");
+                atenderVisitanteAnimales(scanner);
                 break;
             case "habitats":
                 atenderVisitanteHabitat(scanner);
