@@ -20,7 +20,14 @@ public class HabitatTerrestre extends Habitats {
                 ", puedeCaminar=" + puedeCaminar +
                 '}';
     }
-
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Explorando el hábitat Terrestre:");
+        System.out.println("Temperatura: " + getTemperatura() + "°C");
+        System.out.println("Humedad: " + getHumedad() + "%");
+        System.out.println("Limpieza: " + (isLimpieza() ? "Sí" : "No"));
+        System.out.println("Capacidad para caminar: " + (puedeCaminar ? "Sí" : "No") + ".\n");
+    }
     @Override
     protected HabitatTerrestre clone() throws CloneNotSupportedException {
         return (HabitatTerrestre) super.clone();

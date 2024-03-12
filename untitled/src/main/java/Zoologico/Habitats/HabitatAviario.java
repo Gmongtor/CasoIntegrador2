@@ -2,39 +2,64 @@ package Zoologico.Habitats;
 
 public class HabitatAviario extends Habitats {
 
-    boolean puede_volar;
+    private boolean puedeVolar; // Siguiendo la convención camelCase para nombres de variables
 
-    public HabitatAviario(float temperatura,float humedad,boolean limpieza, boolean puede_volar) {
+    public HabitatAviario(float temperatura, float humedad, boolean limpieza, boolean puedeVolar) {
         super(temperatura, humedad, limpieza);
-        this.puede_volar = puede_volar;
+        this.puedeVolar = puedeVolar;
     }
-    public void MostrarInformacion() {
+
+    // Ajustando el nombre del método para seguir la convención camelCase
+    public void mostrarInformacion() {
+        System.out.println("Explorando el hábitat Aviario:");
         System.out.println("Temperatura: " + getTemperatura() + "°C");
         System.out.println("Humedad: " + getHumedad() + "%");
         System.out.println("Limpieza: " + (isLimpieza() ? "Sí" : "No"));
-        System.out.println("Puede volar: " + (puede_volar ? "Sí" : "No"));
+        System.out.println("Puede volar: " + (puedeVolar ? "Sí" : "No"));
     }
 
+    @Override
     public String toString() {
-        return "aviario []";
+        return "HabitatAviario{" +
+                "temperatura=" + getTemperatura() +
+                ", humedad=" + getHumedad() +
+                ", limpieza=" + isLimpieza() +
+                ", puedeVolar=" + puedeVolar +
+                '}';
     }
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+
+    @Override
+    protected HabitatAviario clone() throws CloneNotSupportedException {
+        return (HabitatAviario) super.clone();
     }
+
+    @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (!(obj instanceof HabitatAviario)) return false;
+        HabitatAviario that = (HabitatAviario) obj;
+        return Float.compare(that.getTemperatura(), getTemperatura()) == 0 &&
+                Float.compare(that.getHumedad(), getHumedad()) == 0 &&
+                isLimpieza() == that.isLimpieza() &&
+                puedeVolar == that.puedeVolar;
     }
 
+    @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = Float.hashCode(getTemperatura());
+        result = 31 * result + Float.hashCode(getHumedad());
+        result = 31 * result + Boolean.hashCode(isLimpieza());
+        result = 31 * result + Boolean.hashCode(puedeVolar);
+        return result;
     }
 
-    public boolean isPuede_volar() {
-        return puede_volar;
+    public boolean isPuedeVolar() {
+        return puedeVolar;
     }
 
-    public void setPuede_volar(boolean puede_volar) {
-        this.puede_volar = puede_volar;
+    public void setPuedeVolar(boolean puedeVolar) {
+        this.puedeVolar = puedeVolar;
     }
 }
+
 
