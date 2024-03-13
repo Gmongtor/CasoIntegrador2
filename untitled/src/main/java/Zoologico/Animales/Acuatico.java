@@ -5,8 +5,8 @@ public class Acuatico extends Animales {
     private String habilidadEspecial; // Ejemplo: "Nadar profundo", "Saltar fuera del agua"
 
     // Actualización del constructor para incluir los nuevos campos de Animales
-    public Acuatico(String nombre, int edad, String estadoSalud, String comportamiento, String energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo, String tipoHabitat, String habilidadEspecial) {
-        super(nombre, edad, estadoSalud, comportamiento, Integer.parseInt(energia), vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
+    public Acuatico(String nombre, int edad, String estadoSalud, String comportamiento, int energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo, String tipoHabitat, String habilidadEspecial) {
+        super(nombre, edad, estadoSalud, comportamiento, energia, vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
         this.tipoHabitat = tipoHabitat;
         this.habilidadEspecial = habilidadEspecial;
     }

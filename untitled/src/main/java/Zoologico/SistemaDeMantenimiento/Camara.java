@@ -1,14 +1,23 @@
 package Zoologico.SistemaDeMantenimiento;
 
-public class Camara implements DispositivoSeguridad {
-    private String ubicacion;
+public class Camara {
+    private boolean estaEncendida;
 
-    public Camara(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public Camara() {
+        estaEncendida = false;
     }
 
-    @Override
-    public void reportarEvento() {
-        System.out.println("Movimiento detectado en la ubicación: " + ubicacion);
+    public void encender() {
+        estaEncendida = true;
+        System.out.println("Cámara encendida.");
+    }
+
+    public void apagar() {
+        estaEncendida = false;
+        System.out.println("Cámara apagada.");
+    }
+
+    public boolean estaEncendida() {
+        return estaEncendida;
     }
 }

@@ -61,8 +61,8 @@ public class Zoologico {
 
         private static void mostrarAnimalesTerrestres() {
             Terrestre leon = new Terrestre("Leon", 12, "Bueno", "Sabana", "Correr rápido", "Agresivo", 10, true, "Carne", false, "Hace 1 mes");
-            Terrestre elefante = new Terrestre("Elefante", 20, "Excelente", "Selva", "Fuerza superior", "Tranquilo", 8, true, "Hierba", true, "Hace 2 meses");
-            Terrestre cabraMontes = new Terrestre("Cabra Montes", 8, "Buena", "Montañas", "Escalada superior", "Agresivo", 9, true, "Hierba", false, "Hace 3 meses");
+            Terrestre elefante = new Terrestre("Elefante", 20, "Excelente", "Selva", "Fuerza superior", "Tranquilo", 80, true, "Hierba", true, "Hace 2 meses");
+            Terrestre cabraMontes = new Terrestre("Cabra Montes", 8, "Buena", "Montañas", "Escalada superior", "Agresivo", 70, true, "Hierba", false, "Hace 3 meses");
             Scanner scanner = new Scanner(System.in);
             System.out.println("Seleccione un animal para ver más información:");
             System.out.println("1. León");
@@ -99,9 +99,9 @@ public class Zoologico {
         System.out.print("Elige una opción (1-3): ");
         int eleccion = scanner.nextInt();
         scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
-        Acuatico pezPayaso = new Acuatico("Pez Payaso", 2, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 3 meses", "Agua Salada", "Nadar entre anémonas");
-        Acuatico tortuga = new Acuatico("Tortuga Marina", 50, "Buena", "Tranquilo", "Media", true, "Algas", true, "Hace 6 meses", "Agua Salada", "Nadar lento");
-        Acuatico mantaRaya = new Acuatico("Manta Raya", 5, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 2 meses", "Agua Salada", "Saltar fuera del agua");
+        Acuatico pezPayaso = new Acuatico("Pez Payaso", 2, "Buena", "Agresivo", 70, true, "Peces", true, "Hace 3 meses", "Agua Salada", "Nadar entre anémonas");
+        Acuatico tortuga = new Acuatico("Tortuga Marina", 50, "Buena", "Tranquilo", 20, true, "Algas", true, "Hace 6 meses", "Agua Salada", "Nadar lento");
+        Acuatico mantaRaya = new Acuatico("Manta Raya", 5, "Buena", "Agresivo", 10, true, "Peces", true, "Hace 2 meses", "Agua Salada", "Saltar fuera del agua");
         switch (eleccion) {
             case 1:
                 System.out.println("Nombre: " + pezPayaso.getNombre() + ", Habilidad Especial: " + pezPayaso.getHabilidadEspecial() + ". Vive en: " + pezPayaso.getTipoHabitat());
@@ -127,9 +127,9 @@ public class Zoologico {
         System.out.print("Elige una opción (1-3): ");
         int eleccion = scanner.nextInt();
         scanner.nextLine();
-        Aviario loro = new Aviario("Loro", 10, "Buena", "Pacifico", "Alta", true, "Frutas", true, "Hace 3 meses", "Vuelo medio", "Habla");
-        Aviario colibri = new Aviario("Colibrí", 2, "Buena", "Tranquilo", "Media", true, "Néctar", true, "Hace 1 mes", "Vuelo rápido", "Zumbido");
-        Aviario aguila = new Aviario("Águila", 5, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 2 meses", "Vuelo alto", "Grito fuerte");
+        Aviario loro = new Aviario("Loro", 10, "Buena", "Pacifico", 50, true, "Frutas", true, "Hace 3 meses", "Vuelo medio", "Habla");
+        Aviario colibri = new Aviario("Colibrí", 2, "Buena", "Tranquilo", 100, true, "Néctar", true, "Hace 1 mes", "Vuelo rápido", "Zumbido");
+        Aviario aguila = new Aviario("Águila", 5, "Buena", "Agresivo", 20, true, "Peces", true, "Hace 2 meses", "Vuelo alto", "Grito fuerte");
         switch (eleccion) {
             case 1:
                 System.out.println("Nombre: " + loro.getNombre() + ", Habilidad Especial: " + loro.getHabilidadEspecial() + ". Vive en: " + loro.getTipoHabitat());
@@ -275,7 +275,7 @@ public class Zoologico {
         System.out.println("3. Aviario");
         System.out.print("Elige una opción (1-3): ");
         int eleccion = scanner.nextInt();
-        scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
+        scanner.nextLine();
 
         Habitats habitatSeleccionado = null;
         switch (eleccion) {
@@ -314,17 +314,45 @@ public class Zoologico {
         System.out.print("Elige una opción (1-9): ");
 
         int eleccion = scanner.nextInt();
-        scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
+        Terrestre leon = new Terrestre("Leon", 12, "Bueno", "Sabana", "Correr rápido", "Agresivo", 10, true, "Carne", false, "Hace 1 mes");
+        Terrestre elefante = new Terrestre("Elefante", 20, "Excelente", "Selva", "Fuerza superior", "Tranquilo", 8, true, "Hierba", true, "Hace 2 meses");
+        Terrestre cabraMontes = new Terrestre("Cabra Montes", 8, "Buena", "Montañas", "Escalada superior", "Agresivo", 9, true, "Hierba", false, "Hace 3 meses");
+        Acuatico pezPayaso = new Acuatico("Pez Payaso", 4, "Buena", "Agresivo", 30, true, "Peces", true, "Hace 3 meses", "Agua Salada", "Nadar entre anémonas");
+        Acuatico tortuga = new Acuatico("Tortuga Marina", 5, "Buena", "Tranquilo", 90, true, "Algas", true, "Hace 6 meses", "Agua Salada", "Nadar lento");
+        Acuatico mantaRaya = new Acuatico("Manta Raya", 7, "Buena", "Agresivo", 70, true, "Peces", true, "Hace 2 meses", "Agua Salada", "Saltar fuera del agua");
+        Aviario loro = new Aviario("Loro", 10, "Buena", "Pacifico", 50, true, "Frutas", true, "Hace 3 meses", "Vuelo medio", "Habla");
+        Aviario colibri = new Aviario("Colibrí", 2, "Buena", "Tranquilo", 100, true, "Néctar", true, "Hace 1 mes", "Vuelo rápido", "Zumbido");
+        Aviario aguila = new Aviario("Águila", 5, "Buena", "Agresivo", 20, true, "Peces", true, "Hace 2 meses", "Vuelo alto", "Grito fuerte");
 
+        scanner.nextLine();
         switch (eleccion) {
             case 1:
-                // Aquí instancias tu objeto León y llamas al método para mostrar la información
+                System.out.println("Nombre: " + leon.getNombre() + ", Habilidad Especial: " + leon.getHabilidadEspecial() + ", Vive en: " + leon.getTipoHabitat() + ", Estado de Salud: " + leon.getEstadoSalud() + ", Último chequeo: " + leon.getUltimoChequeo() + ", Dieta: " + leon.getDieta() + ", Cuidados Especiales: " + leon.isCuidadosEspeciales() + ", Vacunado: " + leon.isVacunado() + ", Energía: " + leon.getEnergia() + ", Comportamiento: " + leon.getComportamiento() + ", Edad: " + leon.getEdad() + " años");
                 break;
             case 2:
-                // Repite el proceso para cada animal
+                System.out.println("Nombre: " + elefante.getNombre() + ", Habilidad Especial: " + elefante.getHabilidadEspecial() + ", Vive en: " + elefante.getTipoHabitat() + ", Estado de Salud: " + elefante.getEstadoSalud() + ", Último chequeo: " + elefante.getUltimoChequeo() + ", Dieta: " + elefante.getDieta() + ", Cuidados Especiales: " + elefante.isCuidadosEspeciales() + ", Vacunado: " + elefante.isVacunado() + ", Energía: " + elefante.getEnergia() + ", Comportamiento: " + elefante.getComportamiento() + ", Edad: " + elefante.getEdad() + " años");
                 break;
-
-            // Agrega casos para cada animal
+            case 3:
+                System.out.println("Nombre: " + cabraMontes.getNombre() + ", Habilidad Especial: " + cabraMontes.getHabilidadEspecial() + ", Vive en: " + cabraMontes.getTipoHabitat() + ", Estado de Salud: " + cabraMontes.getEstadoSalud() + ", Último chequeo: " + cabraMontes.getUltimoChequeo() + ", Dieta: " + cabraMontes.getDieta() + ", Cuidados Especiales: " + cabraMontes.isCuidadosEspeciales() + ", Vacunado: " + cabraMontes.isVacunado() + ", Energía: " + cabraMontes.getEnergia() + ", Comportamiento: " + cabraMontes.getComportamiento() + ", Edad: " + cabraMontes.getEdad() + " años");
+                break;
+            case 4:
+                System.out.println("Nombre: " + pezPayaso.getNombre() + ", Habilidad Especial: " + pezPayaso.getHabilidadEspecial() + ", Vive en: " + pezPayaso.getTipoHabitat() + ", Estado de Salud: " + pezPayaso.getEstadoSalud() + ", Último chequeo: " + pezPayaso.getUltimoChequeo() + ", Dieta: " + pezPayaso.getDieta() + ", Cuidados Especiales: " + pezPayaso.isCuidadosEspeciales() + ", Vacunado: " + pezPayaso.isVacunado() + ", Energía: " + pezPayaso.getEnergia() + ", Comportamiento: " + pezPayaso.getComportamiento() + ", Edad: " + pezPayaso.getEdad() + " años");
+                break;
+            case 5:
+                System.out.println("Nombre: " + tortuga.getNombre() + ", Habilidad Especial: " + tortuga.getHabilidadEspecial() + ", Vive en: " + tortuga.getTipoHabitat() + ", Estado de Salud: " + tortuga.getEstadoSalud() + ", Último chequeo: " + tortuga.getUltimoChequeo() + ", Dieta: " + tortuga.getDieta() + ", Cuidados Especiales: " + tortuga.isCuidadosEspeciales() + ", Vacunado: " + tortuga.isVacunado() + ", Energía: " + tortuga.getEnergia() + ", Comportamiento: " + tortuga.getComportamiento() + ", Edad: " + tortuga.getEdad() + " años");
+                break;
+            case 6:
+                System.out.println("Nombre: " + mantaRaya.getNombre() + ", Habilidad Especial: " + mantaRaya.getHabilidadEspecial() + ", Vive en: " + mantaRaya.getTipoHabitat() + ", Estado de Salud: " + mantaRaya.getEstadoSalud() + ", Último chequeo: " + mantaRaya.getUltimoChequeo() + ", Dieta: " + mantaRaya.getDieta() + ", Cuidados Especiales: " + mantaRaya.isCuidadosEspeciales() + ", Vacunado: " + mantaRaya.isVacunado() + ", Energía: " + mantaRaya.getEnergia() + ", Comportamiento: " + mantaRaya.getComportamiento() + ", Edad: " + mantaRaya.getEdad() + " años");
+                break;
+            case 7:
+                System.out.println("Nombre: " + loro.getNombre() + ", Habilidad Especial: " + loro.getHabilidadEspecial() + ", Vive en: " + loro.getTipoHabitat() + ", Estado de Salud: " + loro.getEstadoSalud() + ", Último chequeo: " + loro.getUltimoChequeo() + ", Dieta: " + loro.getDieta() + ", Cuidados Especiales: " + loro.isCuidadosEspeciales() + ", Vacunado: " + loro.isVacunado() + ", Energía: " + loro.getEnergia() + ", Comportamiento: " + loro.getComportamiento() + ", Edad: " + loro.getEdad() + " años");
+                break;
+            case 8:
+                System.out.println("Nombre: " + colibri.getNombre() + ", Habilidad Especial: " + colibri.getHabilidadEspecial() + ", Vive en: " + colibri.getTipoHabitat() + ", Estado de Salud: " + colibri.getEstadoSalud() + ", Último chequeo: " + colibri.getUltimoChequeo() + ", Dieta: " + colibri.getDieta() + ", Cuidados Especiales: " + colibri.isCuidadosEspeciales() + ", Vacunado: " + colibri.isVacunado() + ", Energía: " + colibri.getEnergia() + ", Comportamiento: " + colibri.getComportamiento() + ", Edad: " + colibri.getEdad() + " años");
+                break;
+            case 9:
+                System.out.println("Nombre: " + aguila.getNombre() + ", Habilidad Especial: " + aguila.getHabilidadEspecial() + ", Vive en: " + aguila.getTipoHabitat() + ", Estado de Salud: " + aguila.getEstadoSalud() + ", Último chequeo: " + aguila.getUltimoChequeo() + ", Dieta: " + aguila.getDieta() + ", Cuidados Especiales: " + aguila.isCuidadosEspeciales() + ", Vacunado: " + aguila.isVacunado() + ", Energía: " + aguila.getEnergia() + ", Comportamiento: " + aguila.getComportamiento() + ", Edad: " + aguila.getEdad() + " años");
+                break;
             default:
                 System.out.println("Opción no válida. Por favor, selecciona un número entre 1 y 9.");
                 break;

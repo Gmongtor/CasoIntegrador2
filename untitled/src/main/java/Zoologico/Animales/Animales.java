@@ -5,8 +5,8 @@ public abstract class Animales {
     protected int edad;
     protected String estadoSalud;
     protected String comportamiento;
-    protected int energia;
     protected boolean vacunado;
+    protected int energia;
     protected String dieta;
     protected boolean cuidadosEspeciales;
     protected String ultimoChequeo;
@@ -16,8 +16,8 @@ public abstract class Animales {
         this.edad = edad;
         this.estadoSalud = estadoSalud;
         this.comportamiento = comportamiento;
-        this.energia = energia;
         this.vacunado = vacunado;
+        this.energia = energia;
         this.dieta = dieta;
         this.cuidadosEspeciales = cuidadosEspeciales;
         this.ultimoChequeo = ultimoChequeo;

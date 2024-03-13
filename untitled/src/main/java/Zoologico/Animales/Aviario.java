@@ -5,8 +5,8 @@ public class Aviario extends Animales {
     private String canto;
 
     // Ajusta el constructor según los nuevos campos en Animales
-    public Aviario(String nombre, int edad, String estadoSalud, String comportamiento, String energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo, String tipoDeVuelo, String canto) {
-        super(nombre, edad, estadoSalud, comportamiento, Integer.parseInt(energia), vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
+    public Aviario(String nombre, int edad, String estadoSalud, String comportamiento, int energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo, String tipoDeVuelo, String canto) {
+        super(nombre, edad, estadoSalud, comportamiento, energia, vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
         this.tipoDeVuelo = tipoDeVuelo;
         this.canto = canto;
     }
