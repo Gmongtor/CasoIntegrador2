@@ -4,8 +4,8 @@ public class Terrestre extends Animales {
     private String tipoHabitat; // Ejemplo: "Bosque", "Desierto"
     private String habilidadEspecial; // Ejemplo: "Correr rápido", "Escalada superior"
 
-    public Terrestre(String nombre, int edad, String estadoSalud, String tipoHabitat, String habilidadEspecial) {
-        super(nombre, edad, estadoSalud);
+    public Terrestre(String nombre, int edad, String estadoSalud, String tipoHabitat, String habilidadEspecial, String comportamiento, int energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo){
+        super(nombre, edad, estadoSalud, comportamiento, energia, vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
         this.tipoHabitat = tipoHabitat;
         this.habilidadEspecial = habilidadEspecial;
     }

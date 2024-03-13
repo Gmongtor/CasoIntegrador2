@@ -3,9 +3,9 @@ package Zoologico.Animales;
 public class ZoologicoAcuatico {
 
     public static void main(String[] args) {
-        Acuatico pezPayaso = new Acuatico("Pez Payaso", 2, "Buena", "Agua Salada", "Esconderse entre anémonas");
-        Acuatico tortuga = new Acuatico("Tortuga Marina", 50, "Buena", "Agua Salada", "Larga vida");
-        Acuatico mantaRaya = new Acuatico("Manta Raya", 5, "Buena", "Agua Salada", "Planea en el agua");
+        Acuatico pezPayaso = new Acuatico("Pez Payaso", 2, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 3 meses", "Agua Salada", "Nadar entre anémonas");
+        Acuatico tortuga = new Acuatico("Tortuga Marina", 50, "Buena", "Tranquilo", "Media", true, "Algas", true, "Hace 6 meses", "Agua Salada", "Nadar lento");
+        Acuatico mantaRaya = new Acuatico("Manta Raya", 5, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 2 meses", "Agua Salada", "Saltar fuera del agua");
 
         mostrarInformacionAnimalAcuatico(pezPayaso);
         mostrarInformacionAnimalAcuatico(tortuga);

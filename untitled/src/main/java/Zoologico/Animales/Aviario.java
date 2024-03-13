@@ -4,8 +4,8 @@ public class Aviario extends Animales {
     private String tipoDeVuelo; // Ejemplo: "Planeador", "Aleteo rápido"
     private String canto; // Ejemplo: "Trino melodioso", "Cacareo fuerte"
 
-    public Aviario(String nombre, int edad, String estadoSalud, String tipoDeVuelo, String canto) {
-        super(nombre, edad, estadoSalud);
+    public Aviario(String nombre, int edad, String estadoSalud, String tipoDeVuelo, String canto, String comportamiento, int energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo){
+        super(nombre, edad, estadoSalud, comportamiento, energia, vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
         this.tipoDeVuelo = tipoDeVuelo;
         this.canto = canto;
     }
