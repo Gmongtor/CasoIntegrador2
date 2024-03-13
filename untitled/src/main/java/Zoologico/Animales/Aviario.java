@@ -41,4 +41,12 @@ public class Aviario extends Animales {
     public void setCanto(String canto) {
         this.canto = canto;
     }
+
+    public String getHabilidadEspecial() {
+        return "Canto: " + canto + ", Vuelo: " + tipoDeVuelo;
+    }
+
+    public String getTipoHabitat() {
+        return "Aviario";
+    }
 }
