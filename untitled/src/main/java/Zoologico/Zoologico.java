@@ -19,6 +19,7 @@ import Zoologico.SistemaDeMantenimiento.*;
 
 public class Zoologico {
     public static void main(String[] args) {
+        inicializarSistemaDeSeguridad();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bienvenido al Zoológico. ¿Eres 'visitante' o 'staff'?");
         String rol = scanner.nextLine().trim().toLowerCase();
@@ -195,7 +196,6 @@ public class Zoologico {
     }
 
     private static void atenderStaff(Scanner scanner) {
-        inicializarSistemaDeSeguridad();
         System.out.println("Selecciona una opción: 'mantenimiento', 'recursos', 'seguridad' o 'pedidos'");
         String eleccion = scanner.nextLine().trim().toLowerCase();
         switch (eleccion) {
