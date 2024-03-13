@@ -1,23 +1,16 @@
 package Zoologico.SistemaDeMantenimiento;
 
 public class Camara {
-    private boolean estaEncendida;
+    private String id;
+    private String ubicacion;
 
-    public Camara() {
-        estaEncendida = false;
+    public Camara(String id, String ubicacion) {
+        this.id = id;
+        this.ubicacion = ubicacion;
     }
 
-    public void encender() {
-        estaEncendida = true;
-        System.out.println("Cámara encendida.");
-    }
-
-    public void apagar() {
-        estaEncendida = false;
-        System.out.println("Cámara apagada.");
-    }
-
-    public boolean estaEncendida() {
-        return estaEncendida;
+    public void grabar() {
+        System.out.println("La cámara " + id + " en " + ubicacion + " está grabando.");
     }
 }
+

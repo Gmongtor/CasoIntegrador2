@@ -15,6 +15,7 @@ import Zoologico.Animales.Terrestre;
 import Zoologico.Animales.Acuatico;
 import Zoologico.Animales.Aviario;
 import Zoologico.Animales.Animales;
+import Zoologico.SistemaDeMantenimiento.*;
 
 public class Zoologico {
     public static void main(String[] args) {
@@ -194,6 +195,7 @@ public class Zoologico {
     }
 
     private static void atenderStaff(Scanner scanner) {
+        inicializarSistemaDeSeguridad();
         System.out.println("Selecciona una opción: 'mantenimiento', 'recursos', 'seguridad' o 'pedidos'");
         String eleccion = scanner.nextLine().trim().toLowerCase();
         switch (eleccion) {
@@ -204,7 +206,7 @@ public class Zoologico {
                 gestionarRecursos();
                 break;
             case "seguridad":
-                System.out.println("Gestión de seguridad...");
+                gestionarStaffSeguridad();
                 break;
             case "pedidos":
                 gestionarPedidos(scanner);
@@ -358,6 +360,48 @@ public class Zoologico {
                 break;
         }
     }
+    private static SistemaDeSeguridad sistemaDeSeguridad;
+
+    private static void inicializarSistemaDeSeguridad() {
+        sistemaDeSeguridad = new SistemaDeSeguridad();
+        // Aquí puedes agregar algunos sensores, cámaras, etc., por defecto
+        sistemaDeSeguridad.agregarCamara(new Camara("Cam01", "Entrada Principal"));
+        sistemaDeSeguridad.agregarSensor(new SensorDeMovimiento("Sensor01", "Área de felinos"));
+        sistemaDeSeguridad.agregarControlAcceso(new ControlAcceso("Puerta 1"));
+        sistemaDeSeguridad.agregarAlarma(new Alarma());
+    }
+    private static void gestionarStaffSeguridad() {
+        System.out.println("Seleccione que quiere ver: 'alarmas', 'sensores', 'camaras', 'controles de acceso'");
+        Scanner scanner = new Scanner(System.in);
+        String eleccion = scanner.nextLine().trim().toLowerCase();
+        switch (eleccion) {
+            case "alarmas":
+                sistemaDeSeguridad.getAlarmas().forEach(alarma -> {
+                    System.out.println(alarma); // Se imprime directamente la alarma
+                });
+                break;
+            case "sensores":
+                sistemaDeSeguridad.getSensores().forEach(sensor -> {
+                    System.out.println(sensor); // Utiliza el método toString() de la clase SensorDeMovimiento
+                });
+                break;
+            case "camaras":
+                sistemaDeSeguridad.getCamaras().forEach(camara -> {
+                    System.out.println(camara); // Utiliza el método toString() de la clase Camara
+                });
+                break;
+            case "controles de acceso":
+                sistemaDeSeguridad.getControlesAcceso().forEach(control -> {
+                    System.out.println(control); // Utiliza el método toString() de la clase ControlAcceso
+                });
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
+    }
+
+
 }
 
 
