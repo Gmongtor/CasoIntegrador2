@@ -51,5 +51,6 @@ public class MantenimientoAnimales {
         // Repetir el patrón de impresión para cada atributo como en el método mostrarInformacionDetallada()
         System.out.println("--------------------------------------------------");
     }
+
 }
 

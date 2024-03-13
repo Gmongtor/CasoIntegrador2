@@ -60,9 +60,9 @@ public class Zoologico {
     }
 
         private static void mostrarAnimalesTerrestres() {
-            Terrestre leon = new Terrestre("León", 5, "Buena", "Agresivo", 100, true, "Carne", true, "Hace 2 meses", "Cavernas", "Rugir");
-            Terrestre elefante = new Terrestre("Elefante", 10, "Buena", "Tranquilo", 200, true, "Hierba", true, "Hace 4 meses", "Praderas", "Barritar");
-            Terrestre cabraMontes = new Terrestre("Cabra Montes", 3, "Buena", "Agresivo", 50, true, "Hierba", true, "Hace 1 mes", "Montañas", "Embiste");
+            Terrestre leon = new Terrestre("Leon", 12, "Bueno", "Sabana", "Correr rápido", "Agresivo", 10, true, "Carne", false, "Hace 1 mes");
+            Terrestre elefante = new Terrestre("Elefante", 20, "Excelente", "Selva", "Fuerza superior", "Tranquilo", 8, true, "Hierba", true, "Hace 2 meses");
+            Terrestre cabraMontes = new Terrestre("Cabra Montes", 8, "Buena", "Montañas", "Escalada superior", "Agresivo", 9, true, "Hierba", false, "Hace 3 meses");
             Scanner scanner = new Scanner(System.in);
             System.out.println("Seleccione un animal para ver más información:");
             System.out.println("1. León");
@@ -198,15 +198,13 @@ public class Zoologico {
         String eleccion = scanner.nextLine().trim().toLowerCase();
         switch (eleccion) {
             case "mantenimiento":
-                System.out.println("Gestión de mantenimiento...");
-                // Aquí podría ir la lógica o método para gestionar el mantenimiento
+                atenderStaffMantenimiento(scanner);
                 break;
             case "recursos":
                 gestionarRecursos();
                 break;
             case "seguridad":
                 System.out.println("Gestión de seguridad...");
-                // Aquí podría ir la lógica o método para gestionar seguridad
                 break;
             case "pedidos":
                 gestionarPedidos(scanner);
@@ -249,6 +247,88 @@ public class Zoologico {
         }
 
         pedidos.mostrarPedidos();
+    }
+    private static void atenderStaffMantenimiento(Scanner scanner) {
+        System.out.println("¿Qué tipo de mantenimiento deseas realizar?");
+        System.out.println("1. Animales");
+        System.out.println("2. Hábitats");
+        System.out.print("Elige una opción (1-2): ");
+        int eleccion = scanner.nextInt();
+        scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
+
+        switch (eleccion) {
+            case 1:
+                atenderStaffMantenimientoAnimales(scanner);
+                break;
+            case 2:
+                atenderStaffHabitat(scanner);
+                break;
+            default:
+                System.out.println("Opción no válida. Por favor, selecciona un número entre 1 y 2.");
+                break;
+        }
+    }
+    private static void atenderStaffHabitat(Scanner scanner) {
+        System.out.println("¿Qué hábitat te gustaría visitar?");
+        System.out.println("1. Terrestre");
+        System.out.println("2. Acuático");
+        System.out.println("3. Aviario");
+        System.out.print("Elige una opción (1-3): ");
+        int eleccion = scanner.nextInt();
+        scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
+
+        Habitats habitatSeleccionado = null;
+        switch (eleccion) {
+            case 1:
+                habitatSeleccionado = new HabitatTerrestre(20, 30, true, true);
+                break;
+            case 2:
+                habitatSeleccionado = new HabitatAcuatico(25, 70, true, true);
+                break;
+            case 3:
+                habitatSeleccionado = new HabitatAviario(22, 60, true, true);
+                break;
+            default:
+                System.out.println("Opción no válida. Por favor, selecciona un número entre 1 y 3.");
+                return;
+        }
+
+        if (habitatSeleccionado != null) {
+            habitatSeleccionado.mostrarInformacion();
+        } else {
+            System.out.println("Ha ocurrido un error al seleccionar el hábitat.");
+        }
+    }
+
+    private static void atenderStaffMantenimientoAnimales(Scanner scanner) {
+        System.out.println("Seleccione el animal para ver su información de mantenimiento:");
+        System.out.println("1. León");
+        System.out.println("2. Elefante");
+        System.out.println("3. Cabra Montes");
+        System.out.println("4. Pez Payaso");
+        System.out.println("5. Tortuga Marina");
+        System.out.println("6. Manta Raya");
+        System.out.println("7. Loro");
+        System.out.println("8. Colibrí");
+        System.out.println("9. Águila");
+        System.out.print("Elige una opción (1-9): ");
+
+        int eleccion = scanner.nextInt();
+        scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
+
+        switch (eleccion) {
+            case 1:
+                // Aquí instancias tu objeto León y llamas al método para mostrar la información
+                break;
+            case 2:
+                // Repite el proceso para cada animal
+                break;
+
+            // Agrega casos para cada animal
+            default:
+                System.out.println("Opción no válida. Por favor, selecciona un número entre 1 y 9.");
+                break;
+        }
     }
 }
 
