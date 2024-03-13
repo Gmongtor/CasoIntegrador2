@@ -1,31 +1,26 @@
 package Zoologico.Animales;
 
 public class Aviario extends Animales {
-    private String tipoDeVuelo; // Ejemplo: "Planeador", "Aleteo rápido"
-    private String canto; // Ejemplo: "Trino melodioso", "Cacareo fuerte"
+    private String tipoDeVuelo;
+    private String canto;
 
-    public Aviario(String nombre, int edad, String estadoSalud, String tipoDeVuelo, String canto, String comportamiento, int energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo){
-        super(nombre, edad, estadoSalud, comportamiento, energia, vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
+    // Ajusta el constructor según los nuevos campos en Animales
+    public Aviario(String nombre, int edad, String estadoSalud, String comportamiento, String energia, boolean vacunado, String dieta, boolean cuidadosEspeciales, String ultimoChequeo, String tipoDeVuelo, String canto) {
+        super(nombre, edad, estadoSalud, comportamiento, Integer.parseInt(energia), vacunado, dieta, cuidadosEspeciales, ultimoChequeo);
         this.tipoDeVuelo = tipoDeVuelo;
         this.canto = canto;
     }
 
     @Override
     public void sonidoEspecifico() {
-        System.out.println(nombre + " canta: " + canto + ".");
+        System.out.println(getNombre() + " canta: " + canto + ".");
     }
 
     public void volar() {
-        System.out.println(nombre + " vuela utilizando un " + tipoDeVuelo + " tipo de vuelo.");
+        System.out.println(getNombre() + " vuela utilizando un " + tipoDeVuelo + " tipo de vuelo.");
     }
 
-    @Override
-    public void alimentar(String comida) {
-        super.alimentar(comida);
-        System.out.println(nombre + " pica su comida: " + comida + ".");
-    }
-
-    // Getters y Setters
+    // Getters y setters
     public String getTipoDeVuelo() {
         return tipoDeVuelo;
     }
@@ -43,10 +38,11 @@ public class Aviario extends Animales {
     }
 
     public String getHabilidadEspecial() {
-        return "Canto: " + canto + ", Vuelo: " + tipoDeVuelo;
+        return null;
     }
 
     public String getTipoHabitat() {
-        return "Aviario";
+        return null;
     }
 }
+

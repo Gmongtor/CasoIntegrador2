@@ -3,9 +3,9 @@ package Zoologico.Animales;
 public class ZoologicoTerrestre {
 
     public static void main(String[] args) {
-        Terrestre leon = new Terrestre("Leon", 12, "Buena", "Sabana", "Correr rápido");
-        Terrestre elefante = new Terrestre("Elefante", 20, "Excelente", "Bosque", "Empuje fuerte");
-        Terrestre cabraMontes = new Terrestre("Cabra Montes", 8, "Buena", "Montaña", "Escalada superior");
+        Terrestre leon = new Terrestre("Leon", 12, "Bueno", "Sabana", "Correr rápido", "Agresivo", 10, true, "Carne", false, "Hace 1 mes");
+        Terrestre elefante = new Terrestre("Elefante", 20, "Excelente", "Selva", "Fuerza superior", "Tranquilo", 8, true, "Hierba", true, "Hace 2 meses");
+        Terrestre cabraMontes = new Terrestre("Cabra Montes", 8, "Buena", "Montañas", "Escalada superior", "Agresivo", 9, true, "Hierba", false, "Hace 3 meses");
 
         mostrarInformacionAnimalTerrestre(leon);
         mostrarInformacionAnimalTerrestre(elefante);

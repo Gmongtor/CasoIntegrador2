@@ -60,11 +60,9 @@ public class Zoologico {
     }
 
         private static void mostrarAnimalesTerrestres() {
-            // Creando instancias de ejemplo para los animales terrestres
-            Terrestre leon = new Terrestre("León", 5, "Saludable", "Sabana", "Rey de la selva");
-            Terrestre elefante = new Terrestre("Elefante", 10, "Saludable", "Selva", "Empujar objetos pesados");
-            Terrestre cabraMontes = new Terrestre("Cabra Montes", 3, "Saludable", "Montañas", "Escalar");
-
+            Terrestre leon = new Terrestre("León", 5, "Buena", "Agresivo", 100, true, "Carne", true, "Hace 2 meses", "Cavernas", "Rugir");
+            Terrestre elefante = new Terrestre("Elefante", 10, "Buena", "Tranquilo", 200, true, "Hierba", true, "Hace 4 meses", "Praderas", "Barritar");
+            Terrestre cabraMontes = new Terrestre("Cabra Montes", 3, "Buena", "Agresivo", 50, true, "Hierba", true, "Hace 1 mes", "Montañas", "Embiste");
             Scanner scanner = new Scanner(System.in);
             System.out.println("Seleccione un animal para ver más información:");
             System.out.println("1. León");
@@ -101,9 +99,9 @@ public class Zoologico {
         System.out.print("Elige una opción (1-3): ");
         int eleccion = scanner.nextInt();
         scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
-        Acuatico pezPayaso = new Acuatico("Pez Payaso", 2, "Buena", "Agua Salada", "Esconderse entre anémonas");
-        Acuatico tortuga = new Acuatico("Tortuga Marina", 50, "Buena", "Agua Salada", "Larga vida");
-        Acuatico mantaRaya = new Acuatico("Manta Raya", 5, "Buena", "Agua Salada", "Planea en el agua");
+        Acuatico pezPayaso = new Acuatico("Pez Payaso", 2, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 3 meses", "Agua Salada", "Nadar entre anémonas");
+        Acuatico tortuga = new Acuatico("Tortuga Marina", 50, "Buena", "Tranquilo", "Media", true, "Algas", true, "Hace 6 meses", "Agua Salada", "Nadar lento");
+        Acuatico mantaRaya = new Acuatico("Manta Raya", 5, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 2 meses", "Agua Salada", "Saltar fuera del agua");
         switch (eleccion) {
             case 1:
                 System.out.println("Nombre: " + pezPayaso.getNombre() + ", Habilidad Especial: " + pezPayaso.getHabilidadEspecial() + ". Vive en: " + pezPayaso.getTipoHabitat());
@@ -128,10 +126,10 @@ public class Zoologico {
         System.out.println("3. Águila");
         System.out.print("Elige una opción (1-3): ");
         int eleccion = scanner.nextInt();
-        scanner.nextLine(); // Consumir el resto de la línea para evitar errores de entrada en futuras lecturas
-        Aviario loro = new Aviario("Loro", 10, "Buena", "Vuelo versátil", "Imitación de sonidos");
-        Aviario colibri = new Aviario("Colibrí", 2, "Buena", "Aleteo rápido", "Zumbido suave");
-        Aviario aguila = new Aviario("Águila", 5, "Excelente", "Planeador", "Grito agudo");
+        scanner.nextLine();
+        Aviario loro = new Aviario("Loro", 10, "Buena", "Pacifico", "Alta", true, "Frutas", true, "Hace 3 meses", "Vuelo medio", "Habla");
+        Aviario colibri = new Aviario("Colibrí", 2, "Buena", "Tranquilo", "Media", true, "Néctar", true, "Hace 1 mes", "Vuelo rápido", "Zumbido");
+        Aviario aguila = new Aviario("Águila", 5, "Buena", "Agresivo", "Alta", true, "Peces", true, "Hace 2 meses", "Vuelo alto", "Grito fuerte");
         switch (eleccion) {
             case 1:
                 System.out.println("Nombre: " + loro.getNombre() + ", Habilidad Especial: " + loro.getHabilidadEspecial() + ". Vive en: " + loro.getTipoHabitat());
